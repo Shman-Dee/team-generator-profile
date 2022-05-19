@@ -1,5 +1,6 @@
 <div id="top"></div>
     <h3 align="center">team-generator</h3>
+    
   ## Table of Contents
   * [Description](#description)
   * [Installation Instructions](#installation-instructions)
