@@ -1,40 +1,38 @@
-
-
 generateHTML = (employees) => {
   // array for cards
-  cardArray = [];
+  cardArray = []
   for (let employee of employees) {
-    const role = employee.getRole();
+    const role = employee.getRole()
 
-    if (role === "Manager") {
-      const managerCard = generateManager(employee);
+    if (role === 'Manager') {
+      const managerCard = generateManager(employee)
 
-      cardArray.push(managerCard);
+      cardArray.push(managerCard)
     }
 
     // call engineer function
-    if (role === "Engineer") {
-      const engineerCard = generateEngineer(employee);
+    if (role === 'Engineer') {
+      const engineerCard = generateEngineer(employee)
 
-      cardArray.push(engineerCard);
+      cardArray.push(engineerCard)
     }
 
     // call intern function
-    if (role === "Intern") {
-      const internCard = generateIntern(employee);
+    if (role === 'Intern') {
+      const internCard = generateIntern(employee)
 
-      cardArray.push(internCard);
+      cardArray.push(internCard)
     }
   }
 
   // join cardArray to create html string
-  const employeeCards = cardArray.join("");
+  const employeeCards = cardArray.join('')
 
   // call generatePage function passing in employee Cards
   // to generate and return team page html
-  const generateTeamPage = generatePage(employeeCards);
-  return generateTeamPage;
-};
+  const generateTeamPage = generatePage(employeeCards)
+  return generateTeamPage
+}
 
 function generatePage(employeeCards) {
   return `<!doctype html>
@@ -71,15 +69,10 @@ function generatePage(employeeCards) {
                   </div>
                 </div>
               </main>
-              <footer class="footer pt-3">
-                  Amazing Team Profile Generator
-                  <br />
-                  @ 2021. All Rights Reserved
-              </footer>
               <!-- Bootstrap -->
               <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
           </body>
-      </html>`;
+      </html>`
 }
 
 const generateEngineer = function (engineer) {
@@ -97,8 +90,8 @@ const generateEngineer = function (engineer) {
             </div>
         </div>
     </div>
-    `;
-};
+    `
+}
 
 const generateManager = function (manager) {
   return `
@@ -115,8 +108,8 @@ const generateManager = function (manager) {
             </div>
         </div>
     </div>
-    `;
-};
+    `
+}
 
 const generateIntern = function (intern) {
   return `
@@ -133,7 +126,7 @@ const generateIntern = function (intern) {
             </div>
     </div>
 </div>
-    `;
-};
+    `
+}
 
-module.exports = generateHTML;
+module.exports = generateHTML
